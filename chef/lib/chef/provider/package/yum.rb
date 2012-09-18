@@ -1120,6 +1120,10 @@ class Chef
           install_package(name, version)
         end
 
+        def group_install(name)
+            yum_command("yum -d0 -e0 -y#{expand_options(@new_resource.options)} groupinstall #{name}")
+        end
+
         def remove_package(name, version)
           if version
             yum_command("yum -d0 -e0 -y#{expand_options(@new_resource.options)} remove #{name}-#{version}#{yum_arch}")
