@@ -50,6 +50,9 @@ class Chef
         end
       end
 
+      def group_install(arg={})
+      end
+
       def allow_downgrade(arg=nil)
         set_or_return(
           :allow_downgrade,
